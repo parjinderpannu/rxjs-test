@@ -5,7 +5,7 @@ let source = Observable.from(numbers);
 
 class MyObserver implements Observer<number> {
 
-    next2(value) {
+    next(value) {
         console.log(`Value: ${value}`);
     }
 
