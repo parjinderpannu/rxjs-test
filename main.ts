@@ -44,7 +44,7 @@ function renderMovies(movies) {
     });
 }
 
-click.flatMap(e => load("moviess.json"))
+click.flatMap(e => load("movies.json"))
     .subscribe(
     renderMovies,
     e => console.log(`error: ${e}`),
