@@ -25,7 +25,9 @@ function load(url: string) {
 }
 
 function loadWithFetch(url: string){
-    return Observable.fromPromise(fetch(url).then(r => r.json()));
+    return Observable.defer(() => {
+        return Observable.fromPromise(fetch(url).then(r => r.json()));
+    });
 }
 
 function retryStrategy({attempts = 4, delay = 1000}) {
